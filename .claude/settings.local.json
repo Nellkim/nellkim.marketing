@@ -3,7 +3,16 @@
     "allow": [
       "Bash(npm create:*)",
       "Bash(npm install:*)",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(cd:*)",
+      "Bash(mv SaasSection.jsx sections/)",
+      "Bash(mv MobileSection.jsx sections/)",
+      "Bash(mv SolutionsSection.jsx sections/)",
+      "Bash(mv ContactSection.jsx sections/)",
+      "Bash(mv LegalPage.jsx legal/)",
+      "Bash(az account:*)",
+      "Bash(az staticwebapp:*)",
+      "Bash(az webapp:*)"
     ]
   }
 }

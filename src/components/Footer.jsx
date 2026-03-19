@@ -1,8 +1,6 @@
-import './Footer.css'
-
 export default function Footer() {
   return (
-    <footer className="footer" id="contact">
+    <footer className="footer">
       <div className="container">
         <div className="footer-top">
           <div className="footer-brand">
@@ -37,6 +35,14 @@ export default function Footer() {
               <li><a href="#mobile">Mobile Platforms</a></li>
               <li><a href="#solutions">Business Solutions</a></li>
               <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <div className="footer-nav">
+            <h3 className="footer-heading">Legal</h3>
+            <ul>
+              <li><a href="#/terms">Terms of Service</a></li>
+              <li><a href="#/privacy">Privacy Policy</a></li>
             </ul>
           </div>
         </div>

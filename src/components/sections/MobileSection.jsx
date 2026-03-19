@@ -1,4 +1,3 @@
-import './MobileSection.css'
 
 const apps = [
   {

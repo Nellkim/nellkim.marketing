@@ -1,4 +1,3 @@
-import './SaasSection.css'
 
 const products = [
   {

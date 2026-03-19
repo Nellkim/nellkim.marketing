@@ -1,4 +1,3 @@
-import './SolutionsSection.css'
 
 const stats = [
   { value: '80+', label: 'Years Combined Executive Experience' },
