@@ -29,13 +29,19 @@ jobs:
 
       - name: Create deployment package
         run: |
-          # Include dist/, server.js, package.json, package-lock.json, node_modules (prod only)
           npm ci --omit=dev
           zip -r deploy.zip dist/ server.js package.json package-lock.json node_modules/
 
-      - name: Deploy to Azure Web App
-        uses: azure/webapps-deploy@v2
+      - name: Azure Login
+        uses: azure/login@v2
         with:
-          app-name: nellkim
-          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          package: deploy.zip
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Deploy to Azure Web App
+        run: |
+          az webapp deploy \
+            --name nellkim \
+            --resource-group nellkim-rg \
+            --subscription 496e71ce-f4e6-4652-9d0f-40bec5027f65 \
+            --src-path deploy.zip \
+            --type zip
