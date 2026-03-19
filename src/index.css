@@ -1,0 +1,70 @@
+:root {
+  --blue: #1a3a8f;
+  --blue-light: #2a52c4;
+  --blue-dark: #0e2260;
+  --blue-glow: rgba(26, 58, 143, 0.35);
+  --orange: #e8651a;
+  --orange-light: #f4842e;
+  --orange-glow: rgba(232, 101, 26, 0.25);
+  --bg-primary: #060a14;
+  --bg-secondary: #0b1224;
+  --bg-card: #0f1730;
+  --bg-card-hover: #141e3a;
+  --text-primary: #e8ecf4;
+  --text-secondary: #8a9bc0;
+  --text-muted: #4e6090;
+  --border: rgba(42, 82, 196, 0.15);
+  --border-hover: rgba(42, 82, 196, 0.35);
+  --font-display: 'Outfit', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--blue-light);
+  color: white;
+}
+
+a {
+  color: var(--orange);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a:hover {
+  color: var(--orange-light);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--blue-dark);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--blue);
+}
