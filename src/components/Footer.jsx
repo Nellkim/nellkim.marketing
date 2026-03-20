@@ -1,6 +1,7 @@
 export default function Footer() {
   return (
     <footer className="footer">
+      <div className="footer-glow" aria-hidden="true" />
       <div className="container">
         <div className="footer-top">
           <div className="footer-brand">
@@ -48,7 +49,10 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} Nellkim LLC. All rights reserved.</p>
+          <p>
+            <span className="footer-pulse-dot" aria-hidden="true" />
+            &copy; {new Date().getFullYear()} Nellkim LLC. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

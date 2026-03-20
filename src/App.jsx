@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import Divider from './components/Divider'
 import SaasSection from './components/sections/SaasSection'
 import MobileSection from './components/sections/MobileSection'
 import SolutionsSection from './components/sections/SolutionsSection'
+import ProcessSection from './components/sections/ProcessSection'
 import ContactSection from './components/sections/ContactSection'
+import CtaBanner from './components/CtaBanner'
 import Footer from './components/Footer'
 import TermsOfService from './components/legal/TermsOfService'
 import PrivacyPolicy from './components/legal/PrivacyPolicy'
@@ -68,10 +71,18 @@ export default function App() {
       <div className="bg-grid" aria-hidden="true" />
       <Navbar />
       <Hero />
+      <div className="hero-section-glow" aria-hidden="true" />
+      <Divider />
       <SaasSection />
+      <Divider />
       <MobileSection />
+      <Divider />
       <SolutionsSection />
+      <Divider />
+      <ProcessSection />
+      <Divider />
       <ContactSection />
+      <CtaBanner />
       <Footer />
     </div>
   )

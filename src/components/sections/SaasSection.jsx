@@ -1,3 +1,4 @@
+import Reveal from '../Reveal'
 
 const products = [
   {
@@ -27,20 +28,24 @@ export default function SaasSection() {
   return (
     <section className="section" id="saas">
       <div className="container">
-        <div className="section-label">SaaS Products</div>
-        <h2 className="section-title">Software as a Service</h2>
-        <p className="section-subtitle">
-          Purpose-built platforms that solve real business problems with AI-driven intelligence.
-        </p>
+        <Reveal>
+          <div className="section-label">SaaS Products</div>
+          <h2 className="section-title">Software as a Service</h2>
+          <p className="section-subtitle">
+            Purpose-built platforms that solve real business problems with AI-driven intelligence.
+          </p>
+        </Reveal>
 
         <div className="card-grid card-grid--3">
-          {products.map(p => (
-            <div className="card" key={p.name}>
-              <div className={`card-icon card-icon--${p.color}`}>{p.icon}</div>
-              <h3 className="card-name">{p.name}</h3>
-              <p className="card-tagline">{p.tagline}</p>
-              <p className="card-desc">{p.desc}</p>
-            </div>
+          {products.map((p, i) => (
+            <Reveal key={p.name} delay={i * 120}>
+              <div className="card">
+                <div className={`card-icon card-icon--${p.color}`}>{p.icon}</div>
+                <h3 className="card-name">{p.name}</h3>
+                <p className="card-tagline">{p.tagline}</p>
+                <p className="card-desc">{p.desc}</p>
+              </div>
+            </Reveal>
           ))}
         </div>
       </div>

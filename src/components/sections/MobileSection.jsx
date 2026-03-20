@@ -1,3 +1,4 @@
+import Reveal from '../Reveal'
 
 const apps = [
   {
@@ -20,20 +21,24 @@ export default function MobileSection() {
   return (
     <section className="section section--alt" id="mobile">
       <div className="container">
-        <div className="section-label">Mobile Platforms</div>
-        <h2 className="section-title">Mobile App Platforms</h2>
-        <p className="section-subtitle">
-          Consumer-facing mobile apps designed to exploit market inefficiencies and create new experiences.
-        </p>
+        <Reveal>
+          <div className="section-label">Mobile Platforms</div>
+          <h2 className="section-title">Mobile App Platforms</h2>
+          <p className="section-subtitle">
+            Consumer-facing mobile apps designed to exploit market inefficiencies and create new experiences.
+          </p>
+        </Reveal>
 
         <div className="card-grid card-grid--2">
-          {apps.map(a => (
-            <div className="card" key={a.name}>
-              <div className={`card-icon card-icon--${a.color}`}>{a.icon}</div>
-              <h3 className="card-name">{a.name}</h3>
-              <p className="card-tagline">{a.tagline}</p>
-              <p className="card-desc">{a.desc}</p>
-            </div>
+          {apps.map((a, i) => (
+            <Reveal key={a.name} delay={i * 150}>
+              <div className="card">
+                <div className={`card-icon card-icon--${a.color}`}>{a.icon}</div>
+                <h3 className="card-name">{a.name}</h3>
+                <p className="card-tagline">{a.tagline}</p>
+                <p className="card-desc">{a.desc}</p>
+              </div>
+            </Reveal>
           ))}
         </div>
       </div>
