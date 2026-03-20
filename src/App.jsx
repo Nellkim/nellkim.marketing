@@ -22,12 +22,18 @@ export default function App() {
 
   useEffect(() => {
     function onHashChange() {
-      setPage(getPage())
-      window.scrollTo(0, 0)
+      const newPage = getPage()
+      const changedPage = newPage !== page
+      setPage(newPage)
+      // Only scroll to top when switching between pages (home/terms/privacy),
+      // not when clicking section anchors within the same page
+      if (changedPage) {
+        window.scrollTo(0, 0)
+      }
     }
     window.addEventListener('hashchange', onHashChange)
     return () => window.removeEventListener('hashchange', onHashChange)
-  }, [])
+  }, [page])
 
   function goHome() {
     window.location.hash = ''
