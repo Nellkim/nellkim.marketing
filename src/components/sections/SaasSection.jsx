@@ -28,7 +28,7 @@ export default function SaasSection() {
   return (
     <section className="section" id="saas">
       <div className="container">
-        <Reveal>
+        <Reveal direction="left">
           <div className="section-label">SaaS Products</div>
           <h2 className="section-title">Software as a Service</h2>
           <p className="section-subtitle">
@@ -38,7 +38,7 @@ export default function SaasSection() {
 
         <div className="card-grid card-grid--3">
           {products.map((p, i) => (
-            <Reveal key={p.name} delay={i * 120}>
+            <Reveal key={p.name} delay={i * 150} direction="scale">
               <div className="card">
                 <div className={`card-icon card-icon--${p.color}`}>{p.icon}</div>
                 <h3 className="card-name">{p.name}</h3>

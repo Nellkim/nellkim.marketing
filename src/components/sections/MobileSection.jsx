@@ -21,7 +21,7 @@ export default function MobileSection() {
   return (
     <section className="section section--alt" id="mobile">
       <div className="container">
-        <Reveal>
+        <Reveal direction="right">
           <div className="section-label">Mobile Platforms</div>
           <h2 className="section-title">Mobile App Platforms</h2>
           <p className="section-subtitle">
@@ -31,7 +31,7 @@ export default function MobileSection() {
 
         <div className="card-grid card-grid--2">
           {apps.map((a, i) => (
-            <Reveal key={a.name} delay={i * 150}>
+            <Reveal key={a.name} delay={i * 150} direction={i === 0 ? 'left' : 'right'}>
               <div className="card">
                 <div className={`card-icon card-icon--${a.color}`}>{a.icon}</div>
                 <h3 className="card-name">{a.name}</h3>

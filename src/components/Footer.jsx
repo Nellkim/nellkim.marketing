@@ -6,7 +6,7 @@ export default function Footer() {
         <div className="footer-top">
           <div className="footer-brand">
             <div className="footer-logo-row">
-              <span className="navbar-logo">N</span>
+              <img src="/logo.svg" alt="Nellkim" className="navbar-logo-img" />
               <span className="footer-wordmark">NELLKIM</span>
             </div>
             <p className="footer-tagline">AI Business Solutions / SaaS / Startups</p>

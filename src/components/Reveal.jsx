@@ -25,13 +25,17 @@ function useInView(options = {}) {
   return [ref, inView]
 }
 
-export default function Reveal({ children, delay = 0, className = '' }) {
+/**
+ * direction: 'up' (default), 'left', 'right', 'scale'
+ */
+export default function Reveal({ children, delay = 0, direction = 'up', className = '' }) {
   const [ref, inView] = useInView()
+  const dirClass = direction !== 'up' ? ` reveal--${direction}` : ''
 
   return (
     <div
       ref={ref}
-      className={`reveal${inView ? ' reveal--visible' : ''}${className ? ' ' + className : ''}`}
+      className={`reveal${dirClass}${inView ? ' reveal--visible' : ''}${className ? ' ' + className : ''}`}
       style={delay ? { transitionDelay: `${delay}ms` } : undefined}
     >
       {children}

@@ -21,7 +21,7 @@ export default function Navbar() {
     <nav className={`navbar${scrolled ? ' navbar--scrolled' : ''}`}>
       <div className="navbar-inner container">
         <a href="#" className="navbar-brand">
-          <span className="navbar-logo">N</span>
+          <img src="/logo.svg" alt="Nellkim" className="navbar-logo-img" />
           <span className="navbar-wordmark">NELLKIM</span>
         </a>
 

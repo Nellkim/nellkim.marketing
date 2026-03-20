@@ -17,7 +17,7 @@ export default function SolutionsSection() {
         </Reveal>
 
         <div className="solutions-layout">
-          <Reveal delay={80}>
+          <Reveal delay={80} direction="left">
             <div className="solutions-text">
               <p>
                 Nellkim works with a select group of businesses in an agency/client
@@ -45,7 +45,7 @@ export default function SolutionsSection() {
             </div>
           </Reveal>
 
-          <Reveal delay={160}>
+          <Reveal delay={160} direction="right">
             <div className="solutions-stats">
               {stats.map(s => (
                 <div className="stat" key={s.label}>
