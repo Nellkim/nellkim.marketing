@@ -22,15 +22,22 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build
+      - name: Build frontend
         run: npm run build
         env:
           VITE_RECAPTCHA_SITE_KEY: ${{ secrets.VITE_RECAPTCHA_SITE_KEY }}
 
-      - name: Create deployment package
+      - name: Prepare deployment package
         run: |
+          mkdir -p deploy
+          cp -r dist deploy/
+          cp server.js deploy/
+          cp package.json deploy/
+          cp package-lock.json deploy/
+          cd deploy
           npm ci --omit=dev
-          zip -r deploy.zip dist/ server.js package.json package-lock.json node_modules/
+          cd ..
+          cd deploy && zip -qr ../deploy.zip . && cd ..
 
       - name: Azure Login
         uses: azure/login@v2
@@ -44,4 +51,5 @@ jobs:
             --resource-group nellkim-rg \
             --subscription 496e71ce-f4e6-4652-9d0f-40bec5027f65 \
             --src-path deploy.zip \
-            --type zip
+            --type zip \
+            --async true
